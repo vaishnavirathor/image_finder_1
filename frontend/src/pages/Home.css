@@ -1,0 +1,249 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #d0cfcf;
+    color: black;
+    margin: 0;
+    padding: 0;
+}
+
+.home-container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    animation: fadeIn 0.5s ease-in;
+}
+
+/* Sticky search container styles */
+.search-container {
+    margin-bottom: 10rem;
+    text-align: center;
+    transition: top 0.3s, opacity 0.3s;
+    position: sticky;
+    top: 0;
+    z-index: 1000; 
+    background-color: white; 
+    padding: 10px 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: slideDown 0.5s ease-out;
+}
+
+/* Hover effect for all buttons */
+button:hover {
+    background-color: #b8c2ce;
+}
+
+/* Form styles within the search container */
+.search-container form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Input styles within the search container */
+.search-container input {
+    padding: 8px;
+    font-size: 16px;
+    width: 80%;
+    max-width: 400px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: border 0.3s;
+}
+
+.search-container input:focus {
+    border-color: #d0cfcf;
+    animation: pulse 1s infinite;
+}
+
+/* Button styles within the search container */
+.search-container button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #d0cfcf;
+    color: black;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    margin-bottom: 10px; 
+}
+
+.search-container button:hover {
+    background-color: #b8c2ce;
+    transform: translateY(-2px);
+    animation: shake 0.5s;
+}
+
+/* Image display grid styles */
+.image-display {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    animation: fadeIn 0.5s ease-in;
+}
+
+/* Individual image styles */
+.image-display img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.header{
+    margin-top: 17rem ;
+}
+.image-display img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    animation: pulse 1s infinite;
+}
+
+/* Resize controls container styles */
+.resize-controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    animation: fadeIn 0.5s ease-in;
+}
+
+.resize-controls label {
+    margin: 5px 0;
+}
+
+/* Resize controls input styles */
+.resize-controls input {
+    width: 60px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: border 0.3s;
+}
+
+.resize-controls input:focus {
+    border-color: #007bff;
+    animation: pulse 1s infinite;
+}
+
+/* Responsive styles for smaller screens */
+@media (max-width: 768px) {
+    .search-container input {
+        width: 100%;
+    }
+
+    .search-container button {
+        width: 100%;
+    }
+
+    .resize-controls {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .resize-controls label {
+        margin: 0 10px;
+    }
+    
+    .search-container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}
+
+/* Additional responsive styles for very small screens */
+@media (max-width: 480px) {
+    .resize-controls input {
+        width: 40px;
+    }
+
+    .home-container {
+        padding: 10px;
+    }
+
+    .search-container {
+        padding: 5px 0;
+    }
+
+    .image-display img {
+        margin: 5px;
+    }
+
+    .search-container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .search-container button {
+        width: 100%;
+        margin: 5px 0;
+    }
+
+    .search-container input {
+        width: 100%;
+        margin: 5px 0;
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes shake {
+    0% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-5px);
+    }
+    50% {
+        transform: translateX(5px);
+    }
+    75% {
+        transform: translateX(-5px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
